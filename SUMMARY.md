@@ -16,3 +16,4 @@
   * [12: Reasoning About Loops with Invariants](units/12-reasoning-about-loops-with-invariants.md)
 * [Cheatsheet](cheatsheet.md)
 * [PE Cheatsheet](pe-cheatsheet.md)
+* [Midterms Cheatsheet](midterms-cheatsheet.md)
