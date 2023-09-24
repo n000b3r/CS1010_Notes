@@ -128,13 +128,13 @@ while (change > 0) {
 
     Write function `cannot_get_married`
 
-    <pre class="language-c"><code class="lang-c"><strong>//Allow Marriage
-    </strong>(age >= 21) || (age >= 16 &#x26;&#x26; consent)
+<pre class="language-c"><code class="lang-c"><strong>//Allow Marriage
+</strong>(age >= 21) || (age >= 16 &#x26;&#x26; consent)
 
-    //Now apply De Morgan’s Law:
-    (age &#x3C; 21) &#x26;&#x26; !(age >= 16 &#x26;&#x26; consent) (age &#x3C; 21) &#x26;&#x26; (!(age >= 16) || !consent)
-    (age &#x3C; 21) &#x26;&#x26; (age &#x3C; 16 || !consent)
-    </code></pre>
+//Now apply De Morgan’s Law:
+(age &#x3C; 21) &#x26;&#x26; !(age >= 16 &#x26;&#x26; consent) (age &#x3C; 21) &#x26;&#x26; (!(age >= 16) || !consent)
+(age &#x3C; 21) &#x26;&#x26; (age &#x3C; 16 || !consent)
+</code></pre>
 
 ### Short-Circuiting
 
