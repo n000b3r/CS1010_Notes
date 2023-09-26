@@ -121,6 +121,14 @@ while (change > 0) {
 
 * The > operators should instead be ≥ operators.&#x20;
 * Imprecisions using floating-point values might mean that certain conditions may be evaluated incorrectly, and more importantly, that one may never reach change == 0
+* Solution without using loops and conditionals:
+
+```c
+one_dollar = (long) change;
+change = one_dollar;
+fifty_cents = (long) (change / 0.5);
+change = fifty_cents * 0.5;
+```
 
 ### De Morgan's Law
 
@@ -146,6 +154,12 @@ Ans:
 
 * `return (x % 10 == 8) || (x > 10 && has8(x/10));`
   * Since recursive calls use more resources, we should call `x % 10 == 8` condition first to allow short-circuiting.
+
+Qn: Write a function to check if a and b are co-primes (they share no common positive factors except 1). c is the min of a and b.
+
+```c
+(c == 1) || (((a % c) != 0 || (b % c) != 0) && are_coprime_upto_c(a, b, c1) 
+```
 
 ### Loop Invariant
 
