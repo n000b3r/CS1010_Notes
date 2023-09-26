@@ -243,26 +243,37 @@ long insert(long N, long d, long k){
 <summary>GCD</summary>
 
 ```c
-void gcd(long a, long b){
-  while (b != 0){
-    long temp = b;
-    b = a % b;
-    a = temp;
+long gcd(long a, long b) {
+  if (b == 0) {
+    return a;
   }
-  return a;
+  return gcd(b, a % b);
 }
 
 ```
 
 * Euclidean Algorithm
-* Let's find the GCD of `48` and `18` using the Euclidean Algorithm:
-  1. `a = 48`, `b = 18`
-  2. `b != 0`, so calculate the remainder: `r = 48 % 18 = 12`
-  3. Update `a` and `b`: `a = 18`, `b = 12`
-  4. Repeat the process: `r = 18 % 12 = 6`
-  5. Update `a` and `b`: `a = 12`, `b = 6`
-  6. Repeat the process: `r = 12 % 6 = 0`
-  7. Now, `b = 0`, so the GCD is the last non-zero remainder, which is `6`.
+
+</details>
+
+<details>
+
+<summary>Simple Digits</summary>
+
+```c
+long simplify(long n) {
+  if (n / 10 == 0) {
+    // one digit remaining
+    return n;
+  }
+  if ((n / 10) % 10 == n % 10) {
+    // last two digits are the same
+    return simplify(n / 10);
+  }
+  // last two digits are different
+  return simplify(n / 10) * 10 + (n % 10);
+}
+```
 
 </details>
 
@@ -318,5 +329,45 @@ cs1010_println_long(denominator);
 ```c
 long numerator = (long)(round(num * 10));
 ```
+
+</details>
+
+<details>
+
+<summary>Ceiling Function for Long</summary>
+
+```c
+  double num = ceil((double)distance / (double)1000);
+  long segments = (long)(round(num));
+```
+
+</details>
+
+<details>
+
+<summary>Rearranging digits to have largest</summary>
+
+```c
+long insert(long n, long digit)
+{
+  if (n % 10 > digit) {
+    return n * 10 + digit;
+  }
+  if (n == 0) {
+    return digit;
+  }
+  return (insert(n / 10, digit) * 10) + (n % 10);
+}
+long largest(long n)
+{
+  if (n < 10) {
+    return n;
+  }
+  return insert(largest(n / 10), n % 10);
+}
+```
+
+* For example, the largest possible number we get by rearranging the digits in 6752378 is 8776532. The largest possible number we get by rearranging the digits in -1010 is -11
+* For negative numbers, we need to rearrange the digits in reverse order.
 
 </details>
