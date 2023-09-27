@@ -151,30 +151,7 @@ long binary_to_decimal(long binary){
 
 ### Onigiri
 
-```c
-ooiwt@pe112:~/ex02-ooiwt$ ./onigiri
-5
-    #     
-   ###    
-  #####   
- ####### 
-#########
-ooiwt@pe112:~/ex02-ooiwt$ ./onigiri
-3
-  #  
- ### 
-#####
-ooiwt@pe112:~/ex02-ooiwt$ ./onigiri
-1
-#
-
-ooiwt@pe112:~/ex02-ooiwt$ ./onigiri | sed 's/ /./g'
-4
-...#...
-..###..
-.#####.
-#######
-```
+![](<.gitbook/assets/image (15).png>)
 
 ```c
 void draw_onigiri(long h){
@@ -233,30 +210,7 @@ long find_least_significant_9(long n){
 
 ### Draw HDB (Iterative)
 
-```c
-ooiwt@pe119:~/2122s1/ex02-ooiwt$ ./hdb
-3 3
-###
-###
-###
-ooiwt@pe119:~/2122s1/ex02-ooiwt$ ./hdb
-10 15
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-```
+![](<.gitbook/assets/image (16).png>)
 
 ```c
 void draw_hdb(long w, long h){
@@ -272,36 +226,7 @@ void draw_hdb(long w, long h){
 
 ### Rectangle&#x20;
 
-```bash
-ooiwt@pe113:~/ex02-ooiwt$ ./rectangle
-2 2
-╔╗
-╚╝
-ooiwt@pe113:~/ex02-ooiwt$ ./rectangle
-2 10
-╔╗
-║║
-║║
-║║
-║║
-║║
-║║
-║║
-║║
-╚╝
-ooiwt@pe113:~/ex02-ooiwt$ ./rectangle
-10 10
-╔════════╗
-║        ║
-║        ║
-║        ║
-║        ║
-║        ║
-║        ║
-║        ║
-║        ║
-╚════════╝
-```
+![](<.gitbook/assets/image (17).png>)
 
 ```c
 void draw_rectangle(long width, long height){
@@ -621,26 +546,14 @@ int main()
 
 ### Pattern
 
-<pre class="language-c"><code class="lang-c">/**
- * Finds the leading number of a given row.
- *
- * @param[in] m The input interval.
- * @param[in] row The input row number.
- * @return The leading number.
- */
-<strong>long find_leading_num(long m, long row) {
+<pre class="language-c"><code class="lang-c"><strong>long find_leading_num(long m, long row) {
 </strong>  if (row == 1){
     return 1;
   }
   return find_leading_num(m, row - 1) + ((row - 1) * m);
 }
 
-/**
- * Prints the padding of a given row.
- *
- * @param[in] h The input height.
- * @param[in] row The row number.
- */
+//Prints the padding of a given row.
 void print_spaces(long h, long row){
   long width = (h * 2) - 1;
   long num_of_cells = (row * 2) - 1;
@@ -650,13 +563,7 @@ void print_spaces(long h, long row){
   }
 }
 
-/**
- * Prints the parallax compression row.
- *
- * @param[in] m The input interval.
- * @param[in] h The input height.
- * @param[in] row The input row.
- */
+//Prints the parallax compression row.
 void draw_row(long m, long h, long row){
   print_spaces(h, row);
   long leading_num = find_leading_num(m, row);
@@ -680,12 +587,7 @@ void draw_row(long m, long h, long row){
 
 }
 
-/**
- * Prints the parallax compression pattern.
- *
- * @param[in] m The input interval.
- * @param[in] h The input height.
- */
+// Prints the parallax compression pattern.
 void draw_parallax_compression(long m, long h) {
   for (long row = 1; row &#x3C;= h; row += 1) {
     draw_row(m, h, row);
