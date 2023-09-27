@@ -548,8 +548,7 @@ int main()
 
 ![](<.gitbook/assets/image (18).png>)
 
-```
-long find_leading_num(long m, long row) {
+<pre class="language-c"><code class="lang-c"><strong>long find_leading_num(long m, long row) {
 </strong>  if (row == 1){
     return 1;
   }
@@ -597,4 +596,4 @@ void draw_parallax_compression(long m, long h) {
     cs1010_println_string("");
   }
 }
-```
+</code></pre>
