@@ -546,6 +546,8 @@ int main()
 
 ### Pattern
 
+![](<.gitbook/assets/image (18).png>)
+
 <pre class="language-c"><code class="lang-c"><strong>long find_leading_num(long m, long row) {
 </strong>  if (row == 1){
     return 1;
